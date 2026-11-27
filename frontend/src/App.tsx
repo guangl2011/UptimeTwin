@@ -135,7 +135,7 @@ export default function App() {
   if (facility === null) {
     return (
       <main>
-        <h1>AI-Uptime Console</h1>
+        <h1>UptimeTwin Console</h1>
         <FacilityPicker onSelected={(selected) => void selectFacility(selected)} />
       </main>
     )

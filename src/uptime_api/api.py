@@ -6,7 +6,7 @@ version commits/history/snapshots, and read-only equipment-inventory upload.
 Phase 2 adds the onboarding-scanner surface: a dry-run inventory parse for
 the UI's fix-unresolved-rows loop, and assessment run/list/read pinned to a
 graph version. Nothing here can reach a facility system — the only writes
-are to AI-Uptime's own database.
+are to UptimeTwin's own database.
 """
 
 from __future__ import annotations

@@ -1,4 +1,4 @@
-"""Evaluation harness for AI-Uptime (Phase 3, R4 role).
+"""Evaluation harness for UptimeTwin (Phase 3, R4 role).
 
 Mirrors the sibling repo's ``evals/`` convention: a corpus module (synthetic
 facilities with adjudicated by-construction labels), a pure metrics module,

@@ -26,7 +26,7 @@ def create_app(
     engine = build_engine(database_url or default_database_url())
 
     Base.metadata.create_all(engine)
-    app = FastAPI(title="AI-Uptime API", version=__version__)
+    app = FastAPI(title="UptimeTwin API", version=__version__)
     app.state.session_factory = build_session_factory(engine)
     app.state.forecaster = resolve_forecaster(enabled=enable_forecasting)
     app.include_router(router)

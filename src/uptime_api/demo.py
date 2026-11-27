@@ -5,7 +5,7 @@ cold-chain facility is created and committed through the real HTTP surface,
 the graph is read back with provenance intact, and the run ends with a scored
 assessment — ranked findings, per-service risk, and the seed facility's known
 single points of failure asserted. Nothing here touches a facility system —
-the only writes are to AI-Uptime's own database.
+the only writes are to UptimeTwin's own database.
 """
 
 from __future__ import annotations
