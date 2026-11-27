@@ -154,23 +154,35 @@ def detect_thermal_findings(
         if buffer_after >= response:
             continue
         node = topology.nodes_by_key[service_key]
+        title = (
+            f"{service_key} buffer ({buffer_after:.1f} h) "
+            f"< response time ({response:g} h)"
+        )
+        if exposure.ride_through_min is not None and exposure.q_load_kw is None:
+            # Ride-through path: the buffer is UPS ride-through minutes, not a
+            # thermal-mass deficit, so there are no kW figures to cite.
+            detail = (
+                f"Tier C service {service_key}: the ride-through buffer "
+                f"({buffer_after:.1f} h) expires before the {response:g} h "
+                "response time — shrink the response (staged parts / on-site "
+                "spares) or add ride-through capacity; see RDS S-1.5."
+            )
+        else:
+            detail = (
+                f"Tier C service {service_key}: after the worst single fault "
+                f"(loss of {exposure.worst_fault_asset}), the remaining capacity "
+                f"{exposure.q_cap_after_worst_fault_kw:g} kW falls below the "
+                f"{exposure.q_load_kw:g} kW demand and the protected space reaches "
+                f"its limit in {buffer_after:.1f} h — shorter than the {response:g} h "
+                "response time. Shrink the response (staged parts / on-site spares) "
+                "or add capacity; see RDS S-1.5."
+            )
         findings.append(
             Finding(
                 kind=FindingKind.THERMAL_BUFFER_SHORT,
                 subject=service_key,
-                title=(
-                    f"{service_key} buffer ({buffer_after:.1f} h) "
-                    f"< response time ({response:g} h)"
-                ),
-                detail=(
-                    f"Tier C service {service_key}: after the worst single fault "
-                    f"(loss of {exposure.worst_fault_asset}), the remaining capacity "
-                    f"{exposure.q_cap_after_worst_fault_kw:g} kW falls below the "
-                    f"{exposure.q_load_kw:g} kW demand and the protected space reaches "
-                    f"its limit in {buffer_after:.1f} h — shorter than the {response:g} h "
-                    "response time. Shrink the response (staged parts / on-site spares) "
-                    "or add capacity; see RDS S-1.5."
-                ),
+                title=title,
+                detail=detail,
                 affected_services=[service_key],
                 evidence=[_service_citation(node)],
             )
