@@ -25,6 +25,7 @@ export type FindingKind =
   | 'missing_redundancy'
   | 'unserved_service'
   | 'life_safety_isolation'
+  | 'thermal_buffer_short'
 
 export interface Facility {
   id: string
@@ -117,6 +118,33 @@ export interface Exposure {
   unprotected_assets: string[]
 }
 
+/** RDS S-1 criticality tier: CI = consequence x coupling x time. */
+export interface TierAssessment {
+  tier: 'A' | 'B' | 'C'
+  ci: number
+  consequence: number
+  coupling: number
+  time_dim: number
+  life_safety: boolean
+  sla: boolean
+  drivers: string[]
+}
+
+/** Thermal / ride-through buffer (RDS M3-C). Null buffer means no deficit. */
+export interface ThermalExposure {
+  q_load_kw: number | null
+  q_cap_healthy_kw: number | null
+  q_cap_after_worst_fault_kw: number | null
+  worst_fault_asset: string | null
+  buffer_hours_healthy: number | null
+  buffer_hours_after_worst_fault: number | null
+  ride_through_min: number | null
+  response_hours: number | null
+  thermal_mass_kj_per_k: number | null
+  temp_now_c: number | null
+  temp_limit_c: number | null
+}
+
 export interface ServiceAssessment {
   service_id: string
   name: string
@@ -128,6 +156,10 @@ export interface ServiceAssessment {
   data_gaps: string[]
   /** Hospital semantics (Phase 4): the service carries the life-safety attribute. */
   life_safety: boolean
+  /** RDS v1.2 S-1 tiering (CI = C x K x T) — absent in stored pre-v1.2 reports. */
+  tier?: TierAssessment | null
+  /** RDS v1.2 M3-C thermal buffering — absent in stored pre-v1.2 reports. */
+  thermal?: ThermalExposure | null
 }
 
 /** One WP2 risk forecast with uncertainty bounds (feature-flagged; default off).

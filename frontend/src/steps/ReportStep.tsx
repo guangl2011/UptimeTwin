@@ -13,6 +13,7 @@ import type {
   Finding,
   RiskForecast,
   ServiceAssessment,
+  ThermalExposure,
 } from '../types'
 import { ErrorNote } from './ErrorNote'
 
@@ -26,6 +27,7 @@ const FINDING_LABELS: Record<Finding['kind'], string> = {
   missing_redundancy: 'Missing redundancy',
   unserved_service: 'Unserved service',
   life_safety_isolation: 'Life-safety isolation',
+  thermal_buffer_short: 'Thermal buffer < response time',
 }
 
 function CitationList({ citations }: { citations: EvidenceCitation[] }) {
@@ -54,6 +56,29 @@ function ServiceName({ service }: { service: ServiceAssessment }) {
       <code>{service.service_id}</code>{' '}
       {service.life_safety && <span className="badge life_safety">life safety</span>}
     </>
+  )
+}
+
+/** Thermal buffer cell (RDS M3-C): post-fault buffer vs response time.
+ *  `no deficit` = supply covers demand after the worst fault; `—` = no
+ *  thermal attributes on the service. Abstains when response time unknown. */
+function ThermalCell({ thermal }: { thermal?: ThermalExposure | null }) {
+  if (!thermal) {
+    return <span className="muted">—</span>
+  }
+  const buffer = thermal.buffer_hours_after_worst_fault
+  const response = thermal.response_hours
+  if (buffer === null) {
+    return <span className="thermal-ok">no deficit</span>
+  }
+  if (response === null) {
+    return <span className="muted">buffer {buffer.toFixed(1)} h (response unscored)</span>
+  }
+  const tight = buffer < response
+  return (
+    <span className={tight ? 'thermal-tight' : 'thermal-ok'}>
+      {buffer.toFixed(1)} h vs {response} h response
+    </span>
   )
 }
 
@@ -139,8 +164,10 @@ function ReportView({ report }: { report: AssessmentReport }) {
         <thead>
           <tr>
             <th>Service</th>
+            <th>Tier</th>
             <th>Redundancy</th>
             <th>Score</th>
+            <th>Thermal buffer</th>
             <th>First fault</th>
             <th>SPOFs</th>
           </tr>
@@ -151,12 +178,24 @@ function ReportView({ report }: { report: AssessmentReport }) {
               <td>
                 <ServiceName service={service} />
               </td>
+              <td>
+                {service.tier ? (
+                  <span className={`badge tier tier-${service.tier.tier}`}>
+                    {service.tier.tier} · CI {service.tier.ci}
+                  </span>
+                ) : (
+                  '—'
+                )}
+              </td>
               <td>{service.redundancy}</td>
               <td>
                 <span className={riskClass(service.criticality.risk_level)}>
                   {service.criticality.score}
                 </span>{' '}
                 {service.criticality.drivers.join('; ')}
+              </td>
+              <td>
+                <ThermalCell thermal={service.thermal} />
               </td>
               <td>{service.exposure.first_fault_tolerated ? 'tolerated' : 'interrupts'}</td>
               <td>
