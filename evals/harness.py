@@ -1075,7 +1075,7 @@ def render_markdown(results: HarnessResults) -> str:
         for segment, segment_metrics in results.per_segment.items()
     }
     lines = [
-        "# AI-Uptime Evaluation Report",
+        "# UptimeTwin Evaluation Report",
         "",
         f"- Corpus: {results.facilities} synthetic facilities across "
         f"{len(results.per_segment)} market segments (cold chain → AIDC → hospitals; "

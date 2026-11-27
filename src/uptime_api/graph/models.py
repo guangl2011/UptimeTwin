@@ -30,7 +30,7 @@ def utcnow() -> datetime:
 
 
 class Base(DeclarativeBase):
-    """Declarative base for all AI-Uptime tables."""
+    """Declarative base for all UptimeTwin tables."""
 
 
 class Facility(Base):

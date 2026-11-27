@@ -45,7 +45,7 @@ DEFAULT_OUTPUT_DIR = Path("sim-results")
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="python -m evals.sim",
-        description="Run the AI-Uptime simulation gates (Sim M1).",
+        description="Run the UptimeTwin simulation gates (Sim M1).",
     )
     parser.add_argument(
         "--seed", type=int, default=CORPUS_SEED, help="corpus seed (default: canonical)"

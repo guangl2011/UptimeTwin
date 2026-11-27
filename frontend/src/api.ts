@@ -1,5 +1,5 @@
 /**
- * Typed fetch client for the AI-Uptime backend. All calls hit the FastAPI
+ * Typed fetch client for the UptimeTwin backend. All calls hit the FastAPI
  * surface through the dev proxy; every error surfaces as an ApiError with
  * the server's detail — nothing is swallowed or guessed.
  */

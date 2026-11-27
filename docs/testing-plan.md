@@ -1,7 +1,7 @@
-# AI-Uptime Testing Plan
+# UptimeTwin Testing Plan
 
 The authoritative testing plan is the project artifact
-**AI Uptime — Testing Plan (art_XaCiEWwo)** (synthetic evaluation and CI
+**UptimeTwin — Testing Plan (art_XaCiEWwo)** (synthetic evaluation and CI
 strategy, AUROC / Brier / calibration / leakage-split policy). This file
 tracks what is *implemented in the repo* and is reconciled with that
 artifact as phases land.

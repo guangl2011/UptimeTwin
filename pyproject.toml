@@ -1,7 +1,7 @@
 [project]
 name = "uptime-api"
 version = "0.1.0"
-description = "AI-Uptime — topology-grounded uptime risk assessment for mission-critical facilities"
+description = "UptimeTwin — topology-grounded uptime risk assessment for mission-critical facilities"
 requires-python = ">=3.11"
 dependencies = [
     "fastapi==0.162.0",

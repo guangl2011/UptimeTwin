@@ -1,6 +1,6 @@
-# AI-Uptime
+# UptimeTwin
 
-AI-Uptime assesses uptime risk in mission-critical facilities — **cold chain
+UptimeTwin assesses uptime risk in mission-critical facilities — **cold chain
 first, then AIDC data centers, then hospitals** — by modeling a site as a
 versioned asset/service dependency graph with provenance, and producing an
 evidence-cited risk assessment with explicit abstention where data is
@@ -61,7 +61,7 @@ docs/             testing plan and project docs
 ## Testing
 
 The authoritative testing plan lives in the project artifact
-**AI Uptime — Testing Plan (art_XaCiEWwo)**. The repo-local
+**UptimeTwin — Testing Plan (art_XaCiEWwo)**. The repo-local
 [`docs/testing-plan.md`](docs/testing-plan.md) tracks what is actually
 implemented (three-segment corpus, per-segment gates, fault-injection
 scenarios, WP2 forecast pass) and is reconciled with that artifact as

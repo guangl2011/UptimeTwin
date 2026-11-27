@@ -34,7 +34,7 @@ DEFAULT_OUTPUT_DIR = Path("eval-results")
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="python -m evals",
-        description="Run the AI-Uptime evaluation harness (synthetic corpus).",
+        description="Run the UptimeTwin evaluation harness (synthetic corpus).",
     )
     parser.add_argument("--seed", type=int, default=None, help="corpus seed (default: canonical)")
     parser.add_argument(
