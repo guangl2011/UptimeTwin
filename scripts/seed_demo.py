@@ -73,7 +73,7 @@ def main() -> None:
                 f"[seed] graph v{body['version_no']} committed: "
                 f"{len(seed['nodes'])} nodes, {len(seed['edges'])} edges"
             )
-        elif status == 422 and "already" in body.get("detail", "").lower():
+        elif status == 422 and "already" in str(body.get("detail", "")).lower():
             print(f"[seed] graph already committed for {facility_id} — skipping")
         else:
             raise SystemExit(f"[seed] commit failed: {status} {body}")
