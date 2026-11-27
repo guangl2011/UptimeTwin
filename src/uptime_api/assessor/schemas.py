@@ -13,7 +13,7 @@ from datetime import datetime
 
 from pydantic import BaseModel, Field
 
-from uptime_api.assessor.enums import FindingKind, RiskLevel
+from uptime_api.assessor.enums import FindingKind, RiskLevel, ServiceTier
 from uptime_api.forecasting.schema import RiskForecast  # noqa: F401  (report contract)
 from uptime_api.graph.enums import AssetType, RedundancyConfig, SourceKind
 
@@ -63,6 +63,43 @@ class ServiceAssessment(BaseModel):
     # Hospital semantics (Phase 4): the service carries the life-safety
     # attribute. Default keeps stored pre-Phase-4 reports readable.
     life_safety: bool = False
+    # RDS v1.2 S-1 tiering and M3-C thermal buffering. Optional so stored
+    # pre-v1.2 reports remain readable.
+    tier: TierAssessment | None = None
+    thermal: ThermalExposure | None = None
+
+
+class TierAssessment(BaseModel):
+    """RDS S-1 criticality tier for one service: CI = C x K x T + overrides."""
+
+    tier: ServiceTier
+    ci: int = Field(ge=1, le=45)
+    consequence: int = Field(ge=1, le=5)
+    coupling: int = Field(ge=1, le=3)
+    time_dim: int = Field(ge=1, le=3)
+    life_safety: bool
+    sla: bool
+    drivers: list[str]
+
+
+class ThermalExposure(BaseModel):
+    """Thermal/ride-through buffer for one service (RDS M3-C, D9 inputs).
+
+    ``buffer_hours_* = None`` means no post-fault deficit — supply capacity
+    covers demand, so the protected space never reaches its limit.
+    """
+
+    q_load_kw: float | None = None
+    q_cap_healthy_kw: float | None = None
+    q_cap_after_worst_fault_kw: float | None = None
+    worst_fault_asset: str | None = None
+    buffer_hours_healthy: float | None = None
+    buffer_hours_after_worst_fault: float | None = None
+    ride_through_min: float | None = None
+    response_hours: float | None = None
+    thermal_mass_kj_per_k: float | None = None
+    temp_now_c: float | None = None
+    temp_limit_c: float | None = None
 
 
 class AssetAssessment(BaseModel):

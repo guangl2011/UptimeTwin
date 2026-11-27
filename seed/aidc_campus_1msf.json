@@ -1,0 +1,1365 @@
+{
+  "facility_id": "meridian_aidc_1msf",
+  "name": "Meridian AI Campus (1M sq ft, ~240 MW)",
+  "segment": "aidc",
+  "author": "case_study_seed",
+  "notes": "RDS v1.2 demo: 1M sq ft AIDC — 2N power trains, 5+1 generators, N+1 chiller/CDU liquid-cooling train, ~10 min coolant buffer.",
+  "nodes": [
+    {
+      "node_key": "UTILITY-A",
+      "name": "Utility feed A (230 kV)",
+      "node_type": "asset",
+      "asset_type": "utility_feed",
+      "location": "substation",
+      "attributes": {},
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "UTILITY-B",
+      "name": "Utility feed B (230 kV)",
+      "node_type": "asset",
+      "asset_type": "utility_feed",
+      "location": "substation",
+      "attributes": {},
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "GEN-1",
+      "name": "Standby generator 1 (50 MW)",
+      "node_type": "asset",
+      "asset_type": "generator",
+      "location": "gen yard",
+      "attributes": {
+        "rated_kw": 50000,
+        "fuel": "diesel"
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "GEN-2",
+      "name": "Standby generator 2 (50 MW)",
+      "node_type": "asset",
+      "asset_type": "generator",
+      "location": "gen yard",
+      "attributes": {
+        "rated_kw": 50000,
+        "fuel": "diesel"
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "GEN-3",
+      "name": "Standby generator 3 (50 MW)",
+      "node_type": "asset",
+      "asset_type": "generator",
+      "location": "gen yard",
+      "attributes": {
+        "rated_kw": 50000,
+        "fuel": "diesel"
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "GEN-4",
+      "name": "Standby generator 4 (50 MW)",
+      "node_type": "asset",
+      "asset_type": "generator",
+      "location": "gen yard",
+      "attributes": {
+        "rated_kw": 50000,
+        "fuel": "diesel"
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "GEN-5",
+      "name": "Standby generator 5 (50 MW)",
+      "node_type": "asset",
+      "asset_type": "generator",
+      "location": "gen yard",
+      "attributes": {
+        "rated_kw": 50000,
+        "fuel": "diesel"
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "ATS-A",
+      "name": "Automatic transfer switch A",
+      "node_type": "asset",
+      "asset_type": "ats",
+      "location": "power room A",
+      "attributes": {},
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "ATS-B",
+      "name": "Automatic transfer switch B",
+      "node_type": "asset",
+      "asset_type": "ats",
+      "location": "power room B",
+      "attributes": {},
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "UPS-A1",
+      "name": "UPS train A1 (Scalable Unit A)",
+      "node_type": "asset",
+      "asset_type": "ups",
+      "location": "power room A",
+      "attributes": {
+        "battery_minutes": 15,
+        "rated_kva": 50000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "UPS-A2",
+      "name": "UPS train A2 (Scalable Unit A)",
+      "node_type": "asset",
+      "asset_type": "ups",
+      "location": "power room A",
+      "attributes": {
+        "battery_minutes": 15,
+        "rated_kva": 50000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "UPS-B1",
+      "name": "UPS train B1 (Scalable Unit B)",
+      "node_type": "asset",
+      "asset_type": "ups",
+      "location": "power room B",
+      "attributes": {
+        "battery_minutes": 15,
+        "rated_kva": 50000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "UPS-B2",
+      "name": "UPS train B2 (Scalable Unit B)",
+      "node_type": "asset",
+      "asset_type": "ups",
+      "location": "power room B",
+      "attributes": {
+        "battery_minutes": 15,
+        "rated_kva": 50000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "PDU-A1",
+      "name": "PDU A1",
+      "node_type": "asset",
+      "asset_type": "pdu",
+      "location": "power room A",
+      "attributes": {
+        "capacity_kw": 100000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "PDU-A2",
+      "name": "PDU A2",
+      "node_type": "asset",
+      "asset_type": "pdu",
+      "location": "power room A",
+      "attributes": {
+        "capacity_kw": 100000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "PDU-B1",
+      "name": "PDU B1",
+      "node_type": "asset",
+      "asset_type": "pdu",
+      "location": "power room B",
+      "attributes": {
+        "capacity_kw": 100000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "PDU-B2",
+      "name": "PDU B2",
+      "node_type": "asset",
+      "asset_type": "pdu",
+      "location": "power room B",
+      "attributes": {
+        "capacity_kw": 100000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "CH-1",
+      "name": "Water-cooled chiller 1 (30 MW)",
+      "node_type": "asset",
+      "asset_type": "chiller",
+      "location": "chiller plant",
+      "attributes": {
+        "capacity_kw": 30000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "node_key": "CH-2",
+      "name": "Water-cooled chiller 2 (30 MW)",
+      "node_type": "asset",
+      "asset_type": "chiller",
+      "location": "chiller plant",
+      "attributes": {
+        "capacity_kw": 30000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "node_key": "CH-3",
+      "name": "Water-cooled chiller 3 (30 MW)",
+      "node_type": "asset",
+      "asset_type": "chiller",
+      "location": "chiller plant",
+      "attributes": {
+        "capacity_kw": 30000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "node_key": "CH-4",
+      "name": "Water-cooled chiller 4 (30 MW)",
+      "node_type": "asset",
+      "asset_type": "chiller",
+      "location": "chiller plant",
+      "attributes": {
+        "capacity_kw": 30000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "node_key": "PUMP-A1",
+      "name": "Hall A chilled-water pump 1",
+      "node_type": "asset",
+      "asset_type": "pump",
+      "location": "pump room A",
+      "attributes": {
+        "capacity_kw": 40000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "node_key": "PUMP-A2",
+      "name": "Hall A chilled-water pump 2",
+      "node_type": "asset",
+      "asset_type": "pump",
+      "location": "pump room A",
+      "attributes": {
+        "capacity_kw": 40000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "node_key": "PUMP-B1",
+      "name": "Hall B chilled-water pump 1",
+      "node_type": "asset",
+      "asset_type": "pump",
+      "location": "pump room B",
+      "attributes": {
+        "capacity_kw": 40000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "node_key": "PUMP-B2",
+      "name": "Hall B chilled-water pump 2",
+      "node_type": "asset",
+      "asset_type": "pump",
+      "location": "pump room B",
+      "attributes": {
+        "capacity_kw": 40000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "node_key": "CDU-A1",
+      "name": "Hall A coolant distribution unit 1 (40 MW)",
+      "node_type": "asset",
+      "asset_type": "cdu",
+      "location": "hall A",
+      "attributes": {
+        "capacity_kw": 40000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "node_key": "CDU-A2",
+      "name": "Hall A coolant distribution unit 2 (40 MW)",
+      "node_type": "asset",
+      "asset_type": "cdu",
+      "location": "hall A",
+      "attributes": {
+        "capacity_kw": 40000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "node_key": "CDU-A3",
+      "name": "Hall A coolant distribution unit 3 (40 MW)",
+      "node_type": "asset",
+      "asset_type": "cdu",
+      "location": "hall A",
+      "attributes": {
+        "capacity_kw": 40000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "node_key": "CDU-B1",
+      "name": "Hall B coolant distribution unit 1 (40 MW)",
+      "node_type": "asset",
+      "asset_type": "cdu",
+      "location": "hall B",
+      "attributes": {
+        "capacity_kw": 40000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "node_key": "CDU-B2",
+      "name": "Hall B coolant distribution unit 2 (40 MW)",
+      "node_type": "asset",
+      "asset_type": "cdu",
+      "location": "hall B",
+      "attributes": {
+        "capacity_kw": 40000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "node_key": "CDU-B3",
+      "name": "Hall B coolant distribution unit 3 (40 MW)",
+      "node_type": "asset",
+      "asset_type": "cdu",
+      "location": "hall B",
+      "attributes": {
+        "capacity_kw": 40000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "node_key": "CRAH-1",
+      "name": "Power-room CRAH 1 (1,200 kW)",
+      "node_type": "asset",
+      "asset_type": "crah",
+      "location": "power room A",
+      "attributes": {
+        "capacity_kw": 1200
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "CRAH-2",
+      "name": "Power-room CRAH 2 (1,200 kW)",
+      "node_type": "asset",
+      "asset_type": "crah",
+      "location": "power room B",
+      "attributes": {
+        "capacity_kw": 1200
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "node_key": "ROW-A",
+      "name": "GPU hall A — 768 GB200-class racks (80 MW IT)",
+      "node_type": "asset",
+      "asset_type": "it_rack",
+      "location": "hall A",
+      "attributes": {
+        "rated_kw": 80000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#it"
+      }
+    },
+    {
+      "node_key": "ROW-B",
+      "name": "GPU hall B — 768 GB200-class racks (80 MW IT)",
+      "node_type": "asset",
+      "asset_type": "it_rack",
+      "location": "hall B",
+      "attributes": {
+        "rated_kw": 80000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#it"
+      }
+    },
+    {
+      "node_key": "SVC-IT-POWER",
+      "name": "IT power distribution (both halls)",
+      "node_type": "service",
+      "asset_type": null,
+      "location": "site",
+      "attributes": {
+        "consequence": 5,
+        "sla": true,
+        "response_hours": 4,
+        "ride_through_min": 15
+      },
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#services"
+      }
+    },
+    {
+      "node_key": "SVC-COOLANT-A",
+      "name": "Hall A coolant supply (FWS <= 32 C)",
+      "node_type": "service",
+      "asset_type": null,
+      "location": "hall A",
+      "attributes": {
+        "consequence": 5,
+        "sla": true,
+        "response_hours": 4,
+        "load_kw": 100000,
+        "thermal_mass_kj_per_k": 760000.0,
+        "temp_now_c": 32,
+        "temp_limit_c": 47
+      },
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#services"
+      }
+    },
+    {
+      "node_key": "SVC-COOLANT-B",
+      "name": "Hall B coolant supply (FWS <= 32 C)",
+      "node_type": "service",
+      "asset_type": null,
+      "location": "hall B",
+      "attributes": {
+        "consequence": 5,
+        "sla": true,
+        "response_hours": 4,
+        "load_kw": 100000,
+        "thermal_mass_kj_per_k": 760000.0,
+        "temp_now_c": 32,
+        "temp_limit_c": 47
+      },
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#services"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_node": "UTILITY-A",
+      "to_node": "ATS-A",
+      "failure_mode": "power_loss",
+      "redundancy_config": "2N",
+      "member_group": "sources_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "UTILITY-B",
+      "to_node": "ATS-B",
+      "failure_mode": "power_loss",
+      "redundancy_config": "2N",
+      "member_group": "sources_b",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "GEN-1",
+      "to_node": "ATS-A",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N+1",
+      "member_group": "gens",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "GEN-2",
+      "to_node": "ATS-A",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N+1",
+      "member_group": "gens",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "GEN-3",
+      "to_node": "ATS-A",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N+1",
+      "member_group": "gens",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "GEN-4",
+      "to_node": "ATS-A",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N+1",
+      "member_group": "gens",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "GEN-5",
+      "to_node": "ATS-A",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N+1",
+      "member_group": "gens",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "GEN-1",
+      "to_node": "ATS-B",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N+1",
+      "member_group": "gens",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "GEN-2",
+      "to_node": "ATS-B",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N+1",
+      "member_group": "gens",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "GEN-3",
+      "to_node": "ATS-B",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N+1",
+      "member_group": "gens",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "GEN-4",
+      "to_node": "ATS-B",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N+1",
+      "member_group": "gens",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "GEN-5",
+      "to_node": "ATS-B",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N+1",
+      "member_group": "gens",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "ATS-A",
+      "to_node": "UPS-A1",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "ATS-A",
+      "to_node": "UPS-A2",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "ATS-B",
+      "to_node": "UPS-B1",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "ATS-B",
+      "to_node": "UPS-B2",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "UPS-A1",
+      "to_node": "PDU-A1",
+      "failure_mode": "power_loss",
+      "redundancy_config": "2N",
+      "member_group": "ups_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "UPS-A2",
+      "to_node": "PDU-A2",
+      "failure_mode": "power_loss",
+      "redundancy_config": "2N",
+      "member_group": "ups_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "UPS-B1",
+      "to_node": "PDU-B1",
+      "failure_mode": "power_loss",
+      "redundancy_config": "2N",
+      "member_group": "ups_b",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "UPS-B2",
+      "to_node": "PDU-B2",
+      "failure_mode": "power_loss",
+      "redundancy_config": "2N",
+      "member_group": "ups_b",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "CH-1",
+      "to_node": "PUMP-A1",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "chillers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "CH-1",
+      "to_node": "PUMP-A2",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "chillers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "CH-1",
+      "to_node": "PUMP-B1",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "chillers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "CH-1",
+      "to_node": "PUMP-B2",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "chillers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "CH-2",
+      "to_node": "PUMP-A1",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "chillers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "CH-2",
+      "to_node": "PUMP-A2",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "chillers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "CH-2",
+      "to_node": "PUMP-B1",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "chillers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "CH-2",
+      "to_node": "PUMP-B2",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "chillers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "CH-3",
+      "to_node": "PUMP-A1",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "chillers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "CH-3",
+      "to_node": "PUMP-A2",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "chillers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "CH-3",
+      "to_node": "PUMP-B1",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "chillers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "CH-3",
+      "to_node": "PUMP-B2",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "chillers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "CH-4",
+      "to_node": "PUMP-A1",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "chillers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "CH-4",
+      "to_node": "PUMP-A2",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "chillers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "CH-4",
+      "to_node": "PUMP-B1",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "chillers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "CH-4",
+      "to_node": "PUMP-B2",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "chillers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "PUMP-A1",
+      "to_node": "CDU-A1",
+      "failure_mode": "fluid_loss",
+      "redundancy_config": "N+1",
+      "member_group": "pumps_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "PUMP-A1",
+      "to_node": "CDU-A2",
+      "failure_mode": "fluid_loss",
+      "redundancy_config": "N+1",
+      "member_group": "pumps_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "PUMP-A1",
+      "to_node": "CDU-A3",
+      "failure_mode": "fluid_loss",
+      "redundancy_config": "N+1",
+      "member_group": "pumps_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "PUMP-A2",
+      "to_node": "CDU-A1",
+      "failure_mode": "fluid_loss",
+      "redundancy_config": "N+1",
+      "member_group": "pumps_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "PUMP-A2",
+      "to_node": "CDU-A2",
+      "failure_mode": "fluid_loss",
+      "redundancy_config": "N+1",
+      "member_group": "pumps_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "PUMP-A2",
+      "to_node": "CDU-A3",
+      "failure_mode": "fluid_loss",
+      "redundancy_config": "N+1",
+      "member_group": "pumps_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "PUMP-B1",
+      "to_node": "CDU-B1",
+      "failure_mode": "fluid_loss",
+      "redundancy_config": "N+1",
+      "member_group": "pumps_b",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "PUMP-B1",
+      "to_node": "CDU-B2",
+      "failure_mode": "fluid_loss",
+      "redundancy_config": "N+1",
+      "member_group": "pumps_b",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "PUMP-B1",
+      "to_node": "CDU-B3",
+      "failure_mode": "fluid_loss",
+      "redundancy_config": "N+1",
+      "member_group": "pumps_b",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "PUMP-B2",
+      "to_node": "CDU-B1",
+      "failure_mode": "fluid_loss",
+      "redundancy_config": "N+1",
+      "member_group": "pumps_b",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "PUMP-B2",
+      "to_node": "CDU-B2",
+      "failure_mode": "fluid_loss",
+      "redundancy_config": "N+1",
+      "member_group": "pumps_b",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "PUMP-B2",
+      "to_node": "CDU-B3",
+      "failure_mode": "fluid_loss",
+      "redundancy_config": "N+1",
+      "member_group": "pumps_b",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#cooling"
+      }
+    },
+    {
+      "from_node": "PDU-A1",
+      "to_node": "SVC-IT-POWER",
+      "failure_mode": "power_loss",
+      "redundancy_config": "2N",
+      "member_group": "pdu_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "PDU-A2",
+      "to_node": "SVC-IT-POWER",
+      "failure_mode": "power_loss",
+      "redundancy_config": "2N",
+      "member_group": "pdu_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "PDU-B1",
+      "to_node": "SVC-IT-POWER",
+      "failure_mode": "power_loss",
+      "redundancy_config": "2N",
+      "member_group": "pdu_b",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "PDU-B2",
+      "to_node": "SVC-IT-POWER",
+      "failure_mode": "power_loss",
+      "redundancy_config": "2N",
+      "member_group": "pdu_b",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "CRAH-1",
+      "to_node": "SVC-IT-POWER",
+      "failure_mode": "control_failure",
+      "redundancy_config": "N+1",
+      "member_group": "crahs",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "CRAH-2",
+      "to_node": "SVC-IT-POWER",
+      "failure_mode": "control_failure",
+      "redundancy_config": "N+1",
+      "member_group": "crahs",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "CDU-A1",
+      "to_node": "SVC-COOLANT-A",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "cdu_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#services"
+      }
+    },
+    {
+      "from_node": "CDU-A2",
+      "to_node": "SVC-COOLANT-A",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "cdu_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#services"
+      }
+    },
+    {
+      "from_node": "CDU-A3",
+      "to_node": "SVC-COOLANT-A",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "cdu_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#services"
+      }
+    },
+    {
+      "from_node": "CDU-B1",
+      "to_node": "SVC-COOLANT-B",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "cdu_b",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#services"
+      }
+    },
+    {
+      "from_node": "CDU-B2",
+      "to_node": "SVC-COOLANT-B",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "cdu_b",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#services"
+      }
+    },
+    {
+      "from_node": "CDU-B3",
+      "to_node": "SVC-COOLANT-B",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "cdu_b",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#services"
+      }
+    },
+    {
+      "from_node": "SVC-COOLANT-A",
+      "to_node": "ROW-A",
+      "failure_mode": "refrigerant_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#services"
+      }
+    },
+    {
+      "from_node": "SVC-COOLANT-B",
+      "to_node": "ROW-B",
+      "failure_mode": "refrigerant_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#services"
+      }
+    },
+    {
+      "from_node": "SVC-IT-POWER",
+      "to_node": "ROW-A",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    },
+    {
+      "from_node": "SVC-IT-POWER",
+      "to_node": "ROW-B",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/aidc-1msf#power"
+      }
+    }
+  ]
+}

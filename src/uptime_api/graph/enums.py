@@ -71,6 +71,18 @@ class LoadClass(enum.StrEnum):
 ATTRIBUTE_LOAD_CLASS = "load_class"
 ATTRIBUTE_LIFE_SAFETY = "life_safety"
 
+# RDS v1.2 S-1 / D9 attribute keys. Free-form node attributes are the
+# transport; these constants are the single spelling (S-5 wording).
+ATTRIBUTE_CONSEQUENCE = "consequence"  # service: 1-5 consequence score (S-1.1)
+ATTRIBUTE_SLA = "sla"  # service: contractual SLA penalty -> at least Tier B
+ATTRIBUTE_RESPONSE_HOURS = "response_hours"  # service: detect + arrive + restore
+ATTRIBUTE_LOAD_KW = "load_kw"  # service: steady-state demand Q_load (kW thermal)
+ATTRIBUTE_RIDE_THROUGH_MIN = "ride_through_min"  # power service: UPS ride-through
+ATTRIBUTE_THERMAL_MASS_KJ_K = "thermal_mass_kj_per_k"  # C_th of the protected zone
+ATTRIBUTE_TEMP_NOW_C = "temp_now_c"  # current zone temperature
+ATTRIBUTE_TEMP_LIMIT_C = "temp_limit_c"  # service-loss temperature threshold
+# Assets declare cooling/electrical capacity as "capacity_kw" (Q_cap per unit).
+
 
 class RedundancyConfig(enum.StrEnum):
     """How many faults the served service tolerates.

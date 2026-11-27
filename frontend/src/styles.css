@@ -233,6 +233,40 @@ code {
   font-weight: 700;
 }
 
+/* RDS v1.2 service tiers: C = mission critical, B = important, A = routine. */
+.badge.tier {
+  font-weight: 700;
+}
+
+.badge.tier-C {
+  background: #fdecea;
+  color: var(--high);
+}
+
+.badge.tier-B {
+  background: #fff4e0;
+  color: var(--elevated);
+}
+
+.badge.tier-A {
+  background: #e6f6ec;
+  color: var(--low);
+}
+
+.thermal-ok {
+  color: var(--low);
+  font-weight: 600;
+}
+
+.thermal-tight {
+  color: var(--high);
+  font-weight: 700;
+}
+
+.muted {
+  color: #8a94a0;
+}
+
 .risk-elevated {
   color: var(--elevated);
   font-weight: 700;
