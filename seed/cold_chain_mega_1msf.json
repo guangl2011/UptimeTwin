@@ -1,0 +1,1222 @@
+{
+  "facility_id": "arctic_plains_1msf",
+  "name": "Arctic Plains Cold Distribution Center (1M sq ft)",
+  "segment": "cold_chain",
+  "author": "case_study_seed",
+  "notes": "RDS v1.2 demo: 1M sq ft cold-chain DC — 2N power trains, N+1 ammonia plant, four zones + quick-turn annex.",
+  "nodes": [
+    {
+      "node_key": "UTILITY-A",
+      "name": "Utility feed A (138 kV)",
+      "node_type": "asset",
+      "asset_type": "utility_feed",
+      "location": "site entrance",
+      "attributes": {},
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "node_key": "UTILITY-B",
+      "name": "Utility feed B (138 kV)",
+      "node_type": "asset",
+      "asset_type": "utility_feed",
+      "location": "site entrance",
+      "attributes": {},
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "node_key": "GEN-1",
+      "name": "Standby generator 1 (2.5 MW diesel)",
+      "node_type": "asset",
+      "asset_type": "generator",
+      "location": "gen yard",
+      "attributes": {
+        "rated_kw": 2500,
+        "fuel": "diesel"
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "node_key": "GEN-2",
+      "name": "Standby generator 2 (2.5 MW diesel)",
+      "node_type": "asset",
+      "asset_type": "generator",
+      "location": "gen yard",
+      "attributes": {
+        "rated_kw": 2500,
+        "fuel": "diesel"
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "node_key": "ATS-A",
+      "name": "Automatic transfer switch A",
+      "node_type": "asset",
+      "asset_type": "ats",
+      "location": "electrical room A",
+      "attributes": {},
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "node_key": "ATS-B",
+      "name": "Automatic transfer switch B",
+      "node_type": "asset",
+      "asset_type": "ats",
+      "location": "electrical room B",
+      "attributes": {},
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "node_key": "UPS-A",
+      "name": "UPS train A (15 min battery)",
+      "node_type": "asset",
+      "asset_type": "ups",
+      "location": "electrical room A",
+      "attributes": {
+        "battery_minutes": 15,
+        "rated_kva": 1500
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "node_key": "UPS-B",
+      "name": "UPS train B (15 min battery)",
+      "node_type": "asset",
+      "asset_type": "ups",
+      "location": "electrical room B",
+      "attributes": {
+        "battery_minutes": 15,
+        "rated_kva": 1500
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "node_key": "PDU-A",
+      "name": "PDU train A (12 MVA)",
+      "node_type": "asset",
+      "asset_type": "pdu",
+      "location": "electrical room A",
+      "attributes": {
+        "capacity_kw": 12000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "node_key": "PDU-B",
+      "name": "PDU train B (12 MVA)",
+      "node_type": "asset",
+      "asset_type": "pdu",
+      "location": "electrical room B",
+      "attributes": {
+        "capacity_kw": 12000
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "node_key": "RACK-A",
+      "name": "Freezer ammonia rack (3,000 kW)",
+      "node_type": "asset",
+      "asset_type": "refrigeration_rack",
+      "location": "engine room",
+      "attributes": {
+        "capacity_kw": 3000,
+        "refrigerant": "R-717 (low-charge ammonia)"
+      },
+      "provenance": {
+        "source_kind": "oem_doc",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "node_key": "RACK-B",
+      "name": "Cooler ammonia rack (2,000 kW)",
+      "node_type": "asset",
+      "asset_type": "refrigeration_rack",
+      "location": "engine room",
+      "attributes": {
+        "capacity_kw": 2000,
+        "refrigerant": "R-717 (low-charge ammonia)"
+      },
+      "provenance": {
+        "source_kind": "oem_doc",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "node_key": "COMP-A1",
+      "name": "Freezer compressor A1 (1,200 kW)",
+      "node_type": "asset",
+      "asset_type": "compressor",
+      "location": "engine room",
+      "attributes": {
+        "rated_kw": 1200
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "node_key": "COMP-A2",
+      "name": "Freezer compressor A2 (1,200 kW)",
+      "node_type": "asset",
+      "asset_type": "compressor",
+      "location": "engine room",
+      "attributes": {
+        "rated_kw": 1200
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "node_key": "COMP-A3",
+      "name": "Freezer compressor A3 (1,200 kW)",
+      "node_type": "asset",
+      "asset_type": "compressor",
+      "location": "engine room",
+      "attributes": {
+        "rated_kw": 1200
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "node_key": "COMP-B1",
+      "name": "Cooler compressor B1 (1,100 kW)",
+      "node_type": "asset",
+      "asset_type": "compressor",
+      "location": "engine room",
+      "attributes": {
+        "rated_kw": 1100
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "node_key": "COMP-B2",
+      "name": "Cooler compressor B2 (1,100 kW)",
+      "node_type": "asset",
+      "asset_type": "compressor",
+      "location": "engine room",
+      "attributes": {
+        "rated_kw": 1100
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "node_key": "COND-1",
+      "name": "Evaporative condenser 1 (3,500 kW)",
+      "node_type": "asset",
+      "asset_type": "condenser",
+      "location": "roof",
+      "attributes": {
+        "capacity_kw": 3500
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "node_key": "COND-2",
+      "name": "Evaporative condenser 2 (3,500 kW)",
+      "node_type": "asset",
+      "asset_type": "condenser",
+      "location": "roof",
+      "attributes": {
+        "capacity_kw": 3500
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "node_key": "COND-3",
+      "name": "Evaporative condenser 3 (3,500 kW)",
+      "node_type": "asset",
+      "asset_type": "condenser",
+      "location": "roof",
+      "attributes": {
+        "capacity_kw": 3500
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "node_key": "EVAP-FZ-A",
+      "name": "Evaporator bank FZ-A 1 (700 kW)",
+      "node_type": "asset",
+      "asset_type": "evaporator",
+      "location": "Freezer hall A (-20 C, 15,000 m2)",
+      "attributes": {
+        "capacity_kw": 700
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "node_key": "EVAP-FZ-A-2",
+      "name": "Evaporator bank FZ-A 2 (700 kW)",
+      "node_type": "asset",
+      "asset_type": "evaporator",
+      "location": "Freezer hall A (-20 C, 15,000 m2)",
+      "attributes": {
+        "capacity_kw": 700
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "node_key": "ROOM-FZ-A",
+      "name": "Freezer hall A (-20 C, 15,000 m2)",
+      "node_type": "asset",
+      "asset_type": "cold_room",
+      "location": "Freezer hall A (-20 C, 15,000 m2)",
+      "attributes": {
+        "setpoint_c": -20,
+        "volume_m2": null
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "node_key": "SVC-FZ-A",
+      "name": "Freezer hall A (-20 C, 15,000 m2) temperature hold",
+      "node_type": "service",
+      "asset_type": null,
+      "location": "Freezer hall A (-20 C, 15,000 m2)",
+      "attributes": {
+        "consequence": 5,
+        "sla": true,
+        "response_hours": 24,
+        "load_kw": 850,
+        "thermal_mass_kj_per_k": 220000000.0,
+        "temp_now_c": -20,
+        "temp_limit_c": -15
+      },
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "node_key": "EVAP-FZ-B",
+      "name": "Evaporator bank FZ-B 1 (700 kW)",
+      "node_type": "asset",
+      "asset_type": "evaporator",
+      "location": "Freezer hall B (-20 C, 15,000 m2)",
+      "attributes": {
+        "capacity_kw": 700
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "node_key": "EVAP-FZ-B-2",
+      "name": "Evaporator bank FZ-B 2 (700 kW)",
+      "node_type": "asset",
+      "asset_type": "evaporator",
+      "location": "Freezer hall B (-20 C, 15,000 m2)",
+      "attributes": {
+        "capacity_kw": 700
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "node_key": "ROOM-FZ-B",
+      "name": "Freezer hall B (-20 C, 15,000 m2)",
+      "node_type": "asset",
+      "asset_type": "cold_room",
+      "location": "Freezer hall B (-20 C, 15,000 m2)",
+      "attributes": {
+        "setpoint_c": -20,
+        "volume_m2": null
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "node_key": "SVC-FZ-B",
+      "name": "Freezer hall B (-20 C, 15,000 m2) temperature hold",
+      "node_type": "service",
+      "asset_type": null,
+      "location": "Freezer hall B (-20 C, 15,000 m2)",
+      "attributes": {
+        "consequence": 5,
+        "sla": true,
+        "response_hours": 24,
+        "load_kw": 850,
+        "thermal_mass_kj_per_k": 220000000.0,
+        "temp_now_c": -20,
+        "temp_limit_c": -15
+      },
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "node_key": "EVAP-FZ-C",
+      "name": "Evaporator bank FZ-C 1 (600 kW)",
+      "node_type": "asset",
+      "asset_type": "evaporator",
+      "location": "Freezer hall C (-20 C, 12,000 m2)",
+      "attributes": {
+        "capacity_kw": 600
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "node_key": "EVAP-FZ-C-2",
+      "name": "Evaporator bank FZ-C 2 (600 kW)",
+      "node_type": "asset",
+      "asset_type": "evaporator",
+      "location": "Freezer hall C (-20 C, 12,000 m2)",
+      "attributes": {
+        "capacity_kw": 600
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "node_key": "ROOM-FZ-C",
+      "name": "Freezer hall C (-20 C, 12,000 m2)",
+      "node_type": "asset",
+      "asset_type": "cold_room",
+      "location": "Freezer hall C (-20 C, 12,000 m2)",
+      "attributes": {
+        "setpoint_c": -20,
+        "volume_m2": null
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "node_key": "SVC-FZ-C",
+      "name": "Freezer hall C (-20 C, 12,000 m2) temperature hold",
+      "node_type": "service",
+      "asset_type": null,
+      "location": "Freezer hall C (-20 C, 12,000 m2)",
+      "attributes": {
+        "consequence": 5,
+        "sla": true,
+        "response_hours": 24,
+        "load_kw": 700,
+        "thermal_mass_kj_per_k": 190000000.0,
+        "temp_now_c": -20,
+        "temp_limit_c": -15
+      },
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "node_key": "EVAP-CL-A",
+      "name": "Evaporator bank CL-A 1 (450 kW)",
+      "node_type": "asset",
+      "asset_type": "evaporator",
+      "location": "Cooler hall A (+2 C, 8,000 m2)",
+      "attributes": {
+        "capacity_kw": 450
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "node_key": "EVAP-CL-A-2",
+      "name": "Evaporator bank CL-A 2 (450 kW)",
+      "node_type": "asset",
+      "asset_type": "evaporator",
+      "location": "Cooler hall A (+2 C, 8,000 m2)",
+      "attributes": {
+        "capacity_kw": 450
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "node_key": "ROOM-CL-A",
+      "name": "Cooler hall A (+2 C, 8,000 m2)",
+      "node_type": "asset",
+      "asset_type": "cold_room",
+      "location": "Cooler hall A (+2 C, 8,000 m2)",
+      "attributes": {
+        "setpoint_c": 2,
+        "volume_m2": null
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "node_key": "SVC-CL-A",
+      "name": "Cooler hall A (+2 C, 8,000 m2) temperature hold",
+      "node_type": "service",
+      "asset_type": null,
+      "location": "Cooler hall A (+2 C, 8,000 m2)",
+      "attributes": {
+        "consequence": 3,
+        "sla": true,
+        "response_hours": 24,
+        "load_kw": 500,
+        "thermal_mass_kj_per_k": 60000000.0,
+        "temp_now_c": 2,
+        "temp_limit_c": 6
+      },
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "node_key": "EVAP-FZ-D",
+      "name": "Annex evaporator FZ-D (900 kW, single)",
+      "node_type": "asset",
+      "asset_type": "evaporator",
+      "location": "annex quick-turn freezer",
+      "attributes": {
+        "capacity_kw": 900
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#annex"
+      }
+    },
+    {
+      "node_key": "ROOM-FZ-D",
+      "name": "Annex quick-turn freezer (-18 C, 4,000 m2)",
+      "node_type": "asset",
+      "asset_type": "cold_room",
+      "location": "annex",
+      "attributes": {
+        "setpoint_c": -18
+      },
+      "provenance": {
+        "source_kind": "inventory_import",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#annex"
+      }
+    },
+    {
+      "node_key": "SVC-FZ-D",
+      "name": "Annex quick-turn freezer temperature hold",
+      "node_type": "service",
+      "asset_type": null,
+      "location": "annex",
+      "attributes": {
+        "consequence": 4,
+        "sla": true,
+        "response_hours": 12,
+        "load_kw": 600,
+        "thermal_mass_kj_per_k": 25000000.0,
+        "temp_now_c": -18,
+        "temp_limit_c": -14
+      },
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "node_key": "SVC-POWER",
+      "name": "Facility power distribution (refrigeration + docks)",
+      "node_type": "service",
+      "asset_type": null,
+      "location": "site",
+      "attributes": {
+        "consequence": 4,
+        "sla": true,
+        "response_hours": 4,
+        "load_kw": 11000
+      },
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_node": "UTILITY-A",
+      "to_node": "ATS-A",
+      "failure_mode": "power_loss",
+      "redundancy_config": "2N",
+      "member_group": "sources_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "from_node": "GEN-1",
+      "to_node": "ATS-A",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N+1",
+      "member_group": "gens_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "from_node": "GEN-2",
+      "to_node": "ATS-A",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N+1",
+      "member_group": "gens_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "from_node": "UTILITY-B",
+      "to_node": "ATS-B",
+      "failure_mode": "power_loss",
+      "redundancy_config": "2N",
+      "member_group": "sources_b",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "from_node": "GEN-1",
+      "to_node": "ATS-B",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N+1",
+      "member_group": "gens_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "from_node": "GEN-2",
+      "to_node": "ATS-B",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N+1",
+      "member_group": "gens_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "from_node": "ATS-A",
+      "to_node": "UPS-A",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "from_node": "ATS-B",
+      "to_node": "UPS-B",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "from_node": "UPS-A",
+      "to_node": "PDU-A",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "from_node": "UPS-B",
+      "to_node": "PDU-B",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "from_node": "COMP-A1",
+      "to_node": "RACK-A",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "comps_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "from_node": "COMP-A2",
+      "to_node": "RACK-A",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "comps_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "from_node": "COMP-A3",
+      "to_node": "RACK-A",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "comps_a",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "from_node": "COMP-B1",
+      "to_node": "RACK-B",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "comps_b",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "from_node": "COMP-B2",
+      "to_node": "RACK-B",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "comps_b",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "from_node": "COND-1",
+      "to_node": "RACK-A",
+      "failure_mode": "refrigerant_loss",
+      "redundancy_config": "N+1",
+      "member_group": "condensers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "from_node": "COND-2",
+      "to_node": "RACK-A",
+      "failure_mode": "refrigerant_loss",
+      "redundancy_config": "N+1",
+      "member_group": "condensers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "from_node": "COND-3",
+      "to_node": "RACK-A",
+      "failure_mode": "refrigerant_loss",
+      "redundancy_config": "N+1",
+      "member_group": "condensers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "from_node": "COND-1",
+      "to_node": "RACK-B",
+      "failure_mode": "refrigerant_loss",
+      "redundancy_config": "N+1",
+      "member_group": "condensers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "from_node": "COND-2",
+      "to_node": "RACK-B",
+      "failure_mode": "refrigerant_loss",
+      "redundancy_config": "N+1",
+      "member_group": "condensers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "from_node": "COND-3",
+      "to_node": "RACK-B",
+      "failure_mode": "refrigerant_loss",
+      "redundancy_config": "N+1",
+      "member_group": "condensers",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#refrigeration"
+      }
+    },
+    {
+      "from_node": "RACK-A",
+      "to_node": "EVAP-FZ-A",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "from_node": "RACK-A",
+      "to_node": "EVAP-FZ-A-2",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "from_node": "EVAP-FZ-A",
+      "to_node": "SVC-FZ-A",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "evaps_FZ-A",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "from_node": "EVAP-FZ-A-2",
+      "to_node": "SVC-FZ-A",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "evaps_FZ-A",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "from_node": "SVC-FZ-A",
+      "to_node": "ROOM-FZ-A",
+      "failure_mode": "refrigerant_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "from_node": "RACK-A",
+      "to_node": "EVAP-FZ-B",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "from_node": "RACK-A",
+      "to_node": "EVAP-FZ-B-2",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "from_node": "EVAP-FZ-B",
+      "to_node": "SVC-FZ-B",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "evaps_FZ-B",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "from_node": "EVAP-FZ-B-2",
+      "to_node": "SVC-FZ-B",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "evaps_FZ-B",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "from_node": "SVC-FZ-B",
+      "to_node": "ROOM-FZ-B",
+      "failure_mode": "refrigerant_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "from_node": "RACK-A",
+      "to_node": "EVAP-FZ-C",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "from_node": "RACK-A",
+      "to_node": "EVAP-FZ-C-2",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "from_node": "EVAP-FZ-C",
+      "to_node": "SVC-FZ-C",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "evaps_FZ-C",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "from_node": "EVAP-FZ-C-2",
+      "to_node": "SVC-FZ-C",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "evaps_FZ-C",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "from_node": "SVC-FZ-C",
+      "to_node": "ROOM-FZ-C",
+      "failure_mode": "refrigerant_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "from_node": "RACK-B",
+      "to_node": "EVAP-CL-A",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "from_node": "RACK-B",
+      "to_node": "EVAP-CL-A-2",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#rooms"
+      }
+    },
+    {
+      "from_node": "EVAP-CL-A",
+      "to_node": "SVC-CL-A",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "evaps_CL-A",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "from_node": "EVAP-CL-A-2",
+      "to_node": "SVC-CL-A",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N+1",
+      "member_group": "evaps_CL-A",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "from_node": "SVC-CL-A",
+      "to_node": "ROOM-CL-A",
+      "failure_mode": "refrigerant_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "from_node": "RACK-A",
+      "to_node": "EVAP-FZ-D",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#annex"
+      }
+    },
+    {
+      "from_node": "EVAP-FZ-D",
+      "to_node": "SVC-FZ-D",
+      "failure_mode": "mechanical_failure",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "from_node": "SVC-FZ-D",
+      "to_node": "ROOM-FZ-D",
+      "failure_mode": "refrigerant_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#services"
+      }
+    },
+    {
+      "from_node": "PDU-A",
+      "to_node": "SVC-POWER",
+      "failure_mode": "power_loss",
+      "redundancy_config": "2N",
+      "member_group": "pdu_trains",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "from_node": "PDU-B",
+      "to_node": "SVC-POWER",
+      "failure_mode": "power_loss",
+      "redundancy_config": "2N",
+      "member_group": "pdu_trains",
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "from_node": "SVC-POWER",
+      "to_node": "RACK-A",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    },
+    {
+      "from_node": "SVC-POWER",
+      "to_node": "RACK-B",
+      "failure_mode": "power_loss",
+      "redundancy_config": "N",
+      "member_group": null,
+      "provenance": {
+        "source_kind": "technician_entry",
+        "source_system": "case_study",
+        "source_ref": "case-studies/cold-chain-1msf#power"
+      }
+    }
+  ]
+}

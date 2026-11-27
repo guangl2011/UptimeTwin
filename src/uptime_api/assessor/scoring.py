@@ -50,6 +50,8 @@ from uptime_api.assessor.schemas import (
     ServiceAssessment,
     SpofEntry,
 )
+from uptime_api.assessor.thermal import assess_thermal, detect_thermal_findings
+from uptime_api.assessor.tiering import tier_service
 from uptime_api.graph.enums import (
     ATTRIBUTE_LIFE_SAFETY,
     ATTRIBUTE_LOAD_CLASS,
@@ -538,7 +540,32 @@ def build_report(
     topology = _Topology.build(snapshot)
     assets = analyze_asset_criticality(topology)
     services = analyze_service_criticality(topology, assets)
+
+    # RDS v1.2 enrichment: thermal buffers (M3-C) then tiering (S-1) —
+    # tiering consumes the buffer for its T dimension.
+    thermal = assess_thermal(topology)
+    tier_by_service: dict[str, str] = {}
+    for service in services:
+        exposure = thermal.get(service.service_id)
+        service.thermal = exposure
+        node = topology.nodes_by_key[service.service_id]
+        buffer = exposure.buffer_hours_after_worst_fault if exposure else None
+        service.tier = tier_service(topology, node, buffer)
+        tier_by_service[service.service_id] = service.tier.tier.value
+
     findings, data_gaps = detect_findings(topology, assets, services)
+    findings.extend(detect_thermal_findings(topology, tier_by_service, thermal))
+    findings.sort(
+        key=lambda f: (
+            -len(f.affected_services),
+            -max(
+                (s.criticality.score for s in services if s.service_id in f.affected_services),
+                default=0,
+            ),
+            f.kind.value,
+            f.subject,
+        )
+    )
     forecasts = forecaster.forecast(snapshot) if forecaster is not None else []
 
     if not snapshot.nodes:

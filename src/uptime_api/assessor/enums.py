@@ -20,3 +20,17 @@ class FindingKind(enum.StrEnum):
     MISSING_REDUNDANCY = "missing_redundancy"
     UNSERVED_SERVICE = "unserved_service"
     LIFE_SAFETY_ISOLATION = "life_safety_isolation"
+    THERMAL_BUFFER_SHORT = "thermal_buffer_short"
+
+
+class ServiceTier(enum.StrEnum):
+    """RDS S-1 criticality tier for a SERVICE (not an asset).
+
+    C = mission critical (UptimeTwin's decision scope), B = important,
+    A = non-critical. Derived from CI = C x K x T with the S-1.2 override
+    rules; assets inherit the highest tier of the services they support.
+    """
+
+    A = "A"
+    B = "B"
+    C = "C"
